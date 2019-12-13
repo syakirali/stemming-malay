@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{% block title %}{% endblock %} | Stemming</title>
+
+  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" sizes="16x16" type="image/png">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-4.3.1-dist/css/bootstrap.min.css') }}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+
+</head>
+
+<body>
+
+  <div class="d-flex toggled" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Stemming</div>
+      <div class="list-group list-group-flush">
+        <a href="{{ url_for('index') }}" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fas fa-home fa-fw mr-3"></span>
+            <span class="menu-collapsed">Home</span>
+          </div>
+        </a>
+        <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fas fa-clipboard fa-fw mr-3"></span>
+            <span class="menu-collapsed">Introduction</span>
+            <span class="fas fa-caret-down ml-auto"></span>
+          </div>
+        </a>
+        <div id='submenu2' class="collapse sidebar-submenu">
+          <a href="{{ url_for('abstract') }}" class="list-group-item list-group-item-action">
+            <span class="menu-collapsed">Abstract</span>
+          </a>
+          <a href="{{ url_for('methodologies') }}" class="list-group-item list-group-item-action">
+            <span class="menu-collapsed">Methodologies</span>
+          </a>
+        </div>
+        <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fas fa-database fa-fw mr-3"></span>
+            <span class="menu-collapsed">Data</span>
+            <span class="fas fa-caret-down ml-auto"></span>
+          </div>
+        </a>
+        <div id='submenu1' class="collapse sidebar-submenu">
+          <a href="{{ url_for('data_dokumen') }}" class="list-group-item list-group-item-action">
+            <span class="menu-collapsed">Documents</span>
+          </a>
+          <a href="{{ url_for('data_term') }}" class="list-group-item list-group-item-action">
+            <span class="menu-collapsed">Terms</span>
+          </a>
+        </div>
+        <a href="{{ url_for('hasil') }}" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fas fa-poll fa-fw mr-3"></span>
+            <span class="menu-collapsed">Result</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
+      {% block content %}{% endblock %}
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='popper.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+  {% block javascript %} {% endblock %}
+
+</body>
+
+</html>

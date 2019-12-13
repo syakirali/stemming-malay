@@ -1,0 +1,39 @@
+{% extends "main_layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5">
+  <h2 align="center">Comparison of the performance of Indonesian Tala and Nazhief Adriani stemming algorithms using python</h2>
+  <h3 class="mt-4">Methodologies</h3>
+  <hr>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='methodologies.png') }}" style="width:100%;" />
+    </div>
+  </div>
+  <p class="mt-4">
+    In this research, there are 3 main steps including scraping, generating term and stemming</p>
+    <ol>
+      <li>
+        <strong>Scraping documents</strong><br>
+        In this stage, 50 documents from the rumahginjal.id site are taken.
+      </li>
+      <li>
+        <strong>Generating Term</strong><br>
+        This stage consists of several steps, they are:
+        <ol>
+          <li>Remove punctuation contained in the document.</li>
+          <li>Removes excess space contained in the document.</li>
+          <li>Separating terms based on spaces, where the terms in the whole document will be separated based on spaces. Because spaces are the link between each word in a sentence.</li>
+          <li>The letters in each term will be changed to the lowercase form.</li>
+          <li>Add trim terms to the database and calculate the frequency of each term.</li>
+        </ol>
+      </li>
+      <li>
+        <strong>Stemming</strong><br>
+        This  stage  is  carried  out  the  stemming  process  for  each  term  using  the  Tala  and Nazief  & Adriani algorithm  while calculating the processing time and  checking the validity of the stemming results from each algorithm
+      </li>
+    </ol>
+</div>
+{% endblock %}

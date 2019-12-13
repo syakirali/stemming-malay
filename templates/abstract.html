@@ -1,0 +1,15 @@
+{% extends "main_layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5">
+  <h2 align="center">Comparison of the performance of Indonesian Tala and Nazhief Adriani stemming algorithms using python</h2>
+  <h3 class="mt-4">Abstract</h3>
+  <hr>
+  <p align="justify" style="text-indent:40px;">
+    Stemming is the process of reducing the affixes from a word to become a basic word. Stemming is very useful in the process of indexing and searching in Information Retrieval (IR). The right stemming algorithm  will  improve  IR  performance.  This  study  compares  two  stemming  algorithms  for  Indonesian, namely the Tala algorithm andNazief & Adriani. We took 50 documents from the <a href="http://rumahginjal.id/category/blog">rumahginjal.id</a> site and analyzed the terms contained in the document, then performed a stemming process for each term using the Tala andNazief & Adriani algorithms. The python programming languagethat have lots of library was used in this study and was supportedby flask (Python Web Framework) to display resultsin web-based application.Based on the research that has been done, it was found that the Tala algorithm has an average processing time  of 0.000026  seconds  with  an  accuracy of 41.63%.  While  Nazief  Adriani  has  an  average processing  time  of  0,000309  seconds  with  an  accuracy  of  61.23%.  It  can  be  concluded  that  the  Tala algorithm is excellent in processing time while the Nazief & Adriani algorithm is excellent in the accuracy of stemming results.
+  </p>
+  <p><strong>Keyword: </strong>Stemming, Information Retrieval, Nazhief & Adriani, Tala</p>
+</div>
+{% endblock %}
