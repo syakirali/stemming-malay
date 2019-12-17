@@ -33,12 +33,12 @@ def abstract():
 def methodologies():
     return render_template('methodologies.html')
 
-@app.route('/data/documen')
+@app.route('/data/document')
 def data_dokumen():
     dokumen = Dokumen.query.all()
     return render_template('data_dokumen.html', dokumen=dokumen)
 
-@app.route('/data/documen/scrap')
+@app.route('/data/document/scrap')
 def hello_world():
     # print(urls)
     # return 'Hello'
